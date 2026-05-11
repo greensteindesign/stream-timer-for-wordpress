@@ -1,88 +1,147 @@
-# Stream Timer
+# ⏰ Stream Timer for WordPress
 
-Zeigt einen Twitch- oder YouTube-Stream zeitgesteuert auf deiner WordPress-Seite. Plattform, Channel, Start- und Endzeitpunkt werden im Backend gepflegt. Eingebunden wird per Shortcode `[stream_timer]`.
+> 🎮 Schedule Twitch and YouTube livestreams on your WordPress site — with zero performance impact when nothing's live.
 
-Außerhalb des Zeitfensters wird **kein HTML, kein JavaScript und kein Twitch-SDK** ausgeliefert — der Embed verschwindet vollständig und kostet nichts.
+![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759b?logo=wordpress&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4?logo=php&logoColor=white)
+![Version](https://img.shields.io/badge/version-3.1.0-46b450)
+![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)
+![i18n](https://img.shields.io/badge/i18n-EN%20%C2%B7%20DE%20%C2%B7%20FR%20%C2%B7%20ES%20%C2%B7%20PT%20%C2%B7%20RU-orange)
 
----
-
-## Features
-
-- **Twitch oder YouTube** (Live-Stream über Channel-ID oder fertiges Video über Video-ID)
-- **Mehrere Zeitfenster im Voraus planbar** (bis zu 20) — pro Eintrag separat **täglich wiederholbar**
-- **Datum + Uhrzeit** pro Zeitfenster (über Mitternacht wird korrekt behandelt)
-- **Konfigurierbare Zeitzone** (alle PHP-Zeitzonen wählbar)
-- **Optionale Auto-Ausblendung** eines anderen Seitenelements via CSS-Selektor während des Streams (z. B. eine News-Loop ersetzen)
-- **Server-seitige Logik** — kein "Flackern" beim Übergang, keine Cache-Probleme
-- **Performance-optimiert** — Assets werden nur geladen, wenn Shortcode auf der Seite UND Zeitfenster aktiv
-- **Strikte Eingabe-Validierung** für Channel-IDs, CSS-Selektor, HTML-IDs und Datumsangaben
-- **Multisite-fähig**, sauberer Uninstall
+Display a Twitch or YouTube embed only when your stream is actually live. Plan **multiple time windows** in advance, each with its **own source**. Outside of every scheduled window the plugin outputs **no markup, no JavaScript, no SDK** — your page stays as fast as if the plugin weren't there.
 
 ---
 
-## Installation
+## ✨ Highlights
 
-### Via ZIP
-
-1. Aus den Releases die aktuelle `stream-timer-for-wordpress.zip` herunterladen
-2. WordPress → **Plugins → Installieren → Plugin hochladen**
-3. Aktivieren
-4. **Einstellungen → Stream Timer** öffnen und konfigurieren
-5. Shortcode `[stream_timer]` an gewünschter Stelle einfügen (Seite, Beitrag, Widget, Theme-Template via `do_shortcode()`)
-
-### Via Git
-
-```bash
-cd wp-content/plugins/
-git clone https://github.com/Greenstein-Design/stream-timer-for-wordpress.git
-```
+- 🎬 **Twitch & YouTube** — live channels or pre-recorded videos
+- 🗓️ **Multiple schedules** — plan up to 20 windows in advance, each with **its own platform + channel**
+- 🔁 **Per-schedule daily repeat** — recurring streams handled natively (incl. windows that span midnight)
+- 🌍 **Timezone-aware** — every PHP timezone, defaults to `Europe/Berlin`
+- 🫥 **Auto-hide other content** while the stream is live (CSS selector)
+- ⚡ **Zero overhead when idle** — no script, no embed, no markup outside of active windows
+- 🌐 **Multilingual** — ships with English, German, French, Spanish, Portuguese, Russian
+- 🔒 **Hardened** — strict input validation, no innerHTML with user data, all output escaped
+- 🧹 **Clean uninstall** — multisite-aware option + transient cleanup
 
 ---
 
-## Shortcode
+## 🚀 Quick Start
 
-```
+### Install
+
+**Option A — Download the ZIP**
+
+1. Grab the latest [`stream-timer-3.1.0.zip`](https://github.com/greensteindesign/stream-timer-for-wordpress/releases)
+2. WordPress → **Plugins → Add New → Upload Plugin** → upload → activate
+3. Go to **Settings → Stream Timer** and configure
+4. Drop the shortcode anywhere on your site:
+
+```text
 [stream_timer]
 ```
 
-Vorschau erzwingen (Zeitfenster wird ignoriert — nützlich zum Layout-Testen im Backend):
+**Option B — Clone**
 
+```bash
+cd wp-content/plugins/
+git clone https://github.com/greensteindesign/stream-timer-for-wordpress.git stream-timer
 ```
+
+### Preview without waiting
+
+```text
 [stream_timer force="on"]
 ```
 
----
-
-## Backend-Konfiguration
-
-| Feld | Beschreibung |
-|------|--------------|
-| Plattform | Twitch oder YouTube |
-| Channel / Video-ID | Twitch-Channel-Name **oder** YouTube-Channel-ID (UC…) / Video-ID |
-| YouTube-Modus | Live (Channel-ID) oder Video (Video-ID) |
-| Zeitzone | Beliebige PHP-Zeitzone, Standard `Europe/Berlin` |
-| Zeitfenster | Beliebig viele Einträge (max. 20) mit Bezeichnung, Start, Ende und optionaler täglicher Wiederholung |
-| Höhe (px) | 200–1200 |
-| Auszublendendes Element | CSS-Selektor, optional |
-| Wrapper-ID | HTML-ID des Containers |
+Useful for layout testing — bypasses the schedule check.
 
 ---
 
-## Branding anpassen (White-Label)
+## 🎛️ How it works
 
-Backend-Footer-Branding lässt sich per Filter überschreiben:
+Each schedule entry has its own source:
 
-```php
-add_filter( 'stream_timer_brand_name', function () {
-    return 'Meine Agentur';
-} );
+| Field | What it does |
+|------|------|
+| 🏷️ **Label** | Free-form name (optional) — shown in the admin status |
+| 📡 **Platform** | `Twitch` or `YouTube` |
+| 🔗 **Channel / Video ID** | Twitch name · YouTube Channel ID (`UC…`) · YouTube 11-char Video ID |
+| 🎥 **YouTube mode** | `Live` (Channel ID) or `Video` (Video ID) — only for YouTube |
+| ▶️ **Start** | Date + time (browser-native `datetime-local`) |
+| ⏹️ **End** | Date + time |
+| 🔁 **Daily** | Repeat the time-of-day window every day |
 
-add_filter( 'stream_timer_brand_url', function () {
-    return 'https://example.com';
-} );
+The active schedule is picked **server-side**. As soon as a window is active, only **that** schedule's source is rendered.
+
+---
+
+## ⚡ Performance
+
+> The whole plugin is built around one principle: **if no window is live, ship nothing.**
+
+When idle:
+- 0 bytes of JavaScript
+- 0 extra HTTP requests
+- No inline data in the HTML
+
+When active:
+- Server-rendered embed markup — no client-side toggle, no flicker
+- Twitch SDK loaded **only** when a Twitch schedule is active
+- Frontend JS loaded **only** when needed (Twitch or hide-selector)
+- 30-second transient cache for the "is any window active?" check
+- `Cache-Control: max-age=60` on shortcode-bearing pages (configurable, automatically `private, no-cache` for logged-in users)
+
+---
+
+## 🛡️ Security
+
+| Layer | What we do |
+|------|------|
+| 🔑 Capability | `manage_options` enforced on render **and** save |
+| 🧪 Nonce | WordPress Settings API (built-in) |
+| 🧼 Inputs | Per-platform whitelist regex for channel IDs, datetime, CSS selector, HTML ID |
+| 🚫 Output | Every `echo` uses `esc_attr` / `esc_html` / `esc_url` / `wp_json_encode` |
+| 🤖 Frontend | No `innerHTML` with user data, client-side re-validation of Twitch channel format, retry-cap on SDK init |
+| 🧹 Uninstall | Options + transients removed (multisite-aware) |
+
+Tested with [Plugin Check](https://wordpress.org/plugins/plugin-check/) v1.9.0 on WordPress 6.9 — **no errors, no warnings.**
+
+---
+
+## 🌐 Translations
+
+Bundled out of the box:
+
+| 🇬🇧 English | 🇩🇪 German | 🇫🇷 French | 🇪🇸 Spanish | 🇵🇹 Portuguese | 🇷🇺 Russian |
+|---|---|---|---|---|---|
+| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+Want another language? Drop a `.po` file into `languages/` named `stream-timer-{locale}.mo` (the build script regenerates `.mo` from `.po`).
+
+---
+
+## 🛠️ Building from source
+
+```bash
+./build.sh             # regenerates .pot + .mo via Docker, then zips
+./build.sh --skip-i18n # skip translation regeneration, use existing .mo
 ```
 
-Cache-Control-Header auf Seiten mit Shortcode lässt sich abschalten:
+Output: `dist/stream-timer-<version>.zip` — ready to upload to WordPress.org or any WP install.
+
+---
+
+## 🎨 White-label / Filters
+
+Override the backend footer branding:
+
+```php
+add_filter( 'stream_timer_brand_name', fn () => 'My Agency' );
+add_filter( 'stream_timer_brand_url',  fn () => 'https://example.com' );
+```
+
+Disable the automatic `Cache-Control` header:
 
 ```php
 add_filter( 'stream_timer_set_cache_headers', '__return_false' );
@@ -90,78 +149,21 @@ add_filter( 'stream_timer_set_cache_headers', '__return_false' );
 
 ---
 
-## Performance
+## 📋 Requirements
 
-Auf Seiten **ohne** aktiven Stream:
-- 0 KB zusätzliches JavaScript
-- 0 zusätzliche HTTP-Requests
-- Keine Inline-Daten im HTML
-
-Auf Seiten **mit** aktivem Stream:
-- Server-seitiges Embed-Markup (kein clientseitiges Toggle)
-- Twitch-SDK nur bei Plattform = Twitch
-- Plugin-JS nur bei Twitch oder wenn Hide-Selector gesetzt
-- 30-Sekunden Transient-Cache für die Aktiv-Prüfung bei mehrfacher Shortcode-Nutzung
-- Empfohlener `Cache-Control: max-age=60` Header auf Seiten mit Shortcode
+- WordPress **6.0+**
+- PHP **7.4+**
 
 ---
 
-## Sicherheit
-
-- Capability-Check (`manage_options`) beim Rendern UND beim Speichern
-- Nonce-Schutz über die WordPress Settings API
-- Plattformspezifische Whitelist-Regex für alle externen IDs
-- CSS-Selektor-Whitelist (keine `{`, `}`, `\`, `;`, Zeilenumbrüche)
-- Kein `innerHTML` mit User-Input im Frontend-JS
-- Alle Ausgaben mit `esc_attr` / `esc_html` / `esc_url`
-- Defense-in-Depth: clientseitige Validierung zusätzlich zur Server-Validierung
-
----
-
-## Anforderungen
-
-- WordPress 6.0+
-- PHP 7.4+
-
----
-
-## Changelog
-
-### 3.1.0
-
-- **Feature:** Mehrere Zeitfenster im Voraus planbar (bis zu 20 pro Konfiguration), jedes Fenster mit optionaler täglicher Wiederholung und freier Bezeichnung
-- **Status-Anzeige:** Aktives Fenster + nächstes geplantes Fenster im Backend sichtbar
-- **Bugfix:** Datetime-Parser akzeptiert nun auch Browser-Eingaben mit Sekunden (`:ss`) und normalisiert
-- **Bugfix:** YouTube-Handles werden vom `live_stream`-Endpoint nicht unterstützt und daher abgewiesen — nur Channel-IDs (UC…) sind im Live-Modus erlaubt
-- **Bugfix:** `repeat_daily` Equal-Case (start == end) erzeugt kein 24h-Phantomfenster mehr
-- **Security:** Cache-Control-Header setzt für eingeloggte Nutzer `private, no-cache` statt `public`
-- **Security:** CSS-Selektor-Whitelist enger gefasst (keine Quotes/Klammern/Attributwerte mehr)
-- **Backward-Compat:** Bestehende Single-Schedule-Konfigurationen werden automatisch in die neue Schedules-Struktur migriert
-
-### 3.0.0
-
-- **Bugfix:** Außerhalb des Zeitfensters wird kein Markup mehr gerendert (vorher konnte Page-Caching dazu führen, dass der Embed sichtbar blieb)
-- **Performance:** Twitch-SDK und Plugin-JS werden nur noch geladen, wenn der Shortcode aktiv auf der Seite ist
-- **Performance:** Transient-Cache für die Status-Prüfung
-- **Cache-Header:** Automatischer `Cache-Control`-Header auf Seiten mit Shortcode
-- Plugin-Slug umbenannt zu `stream-timer-for-wordpress`
-
-### 2.0.0
-
-- White-Label-Release, Security-Hardening, Zeitzonen-Konfiguration
-
-### 1.0.0
-
-- Initial Release
-
----
-
-## Lizenz
+## 📜 License
 
 GPL-2.0-or-later
 
 ---
 
-## Autor
+## 💚 Author
 
-Made with 💚 by [Greenstein.Design](https://greenstein.design) — Rene Grebenstein, Greenstein Designagentur.
+Built by [**Greenstein.Design**](https://greenstein.design) — Rene Grebenstein.
+
+⭐ If this plugin saved you an hour, a star on GitHub is the easiest way to say thanks.
