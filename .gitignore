@@ -1,0 +1,6 @@
+dist/
+.pcp-run/
+.DS_Store
+*.swp
+Thumbs.db
+node_modules/

@@ -1,0 +1,210 @@
+# Copyright (C) 2026 Greenstein Designagentur — Rene Grebenstein
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Stream Timer 3.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/stream-timer\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-05-11T16:03:21+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: stream-timer\n"
+
+#. Plugin Name of the plugin
+#: stream-timer-for-wordpress.php
+#: stream-timer-for-wordpress.php:123
+#: stream-timer-for-wordpress.php:124
+#: stream-timer-for-wordpress.php:338
+msgid "Stream Timer"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: stream-timer-for-wordpress.php
+msgid "https://greenstein.design"
+msgstr ""
+
+#. Description of the plugin
+#: stream-timer-for-wordpress.php
+msgid "Schedule-based Twitch or YouTube stream embed. Plan multiple time windows in advance. Configurable in the backend, insert via shortcode [stream_timer]. Performance optimized: assets load only when the shortcode is present and a window is active."
+msgstr ""
+
+#. Author of the plugin
+#: stream-timer-for-wordpress.php
+msgid "Greenstein Designagentur — Rene Grebenstein"
+msgstr ""
+
+#. translators: %d: number of incomplete schedule rows that were ignored
+#: stream-timer-for-wordpress.php:227
+#, php-format
+msgid "%d schedule row was ignored because start and end are required."
+msgid_plural "%d schedule rows were ignored because start and end are required."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stream-timer-for-wordpress.php:326
+msgid "Insufficient permissions."
+msgstr ""
+
+#: stream-timer-for-wordpress.php:334
+msgid "Settings saved."
+msgstr ""
+
+#: stream-timer-for-wordpress.php:342
+msgid "Configuration for the scheduled stream embed. Insert via shortcode:"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:345
+msgid "Preview (always show):"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:352
+msgid "General"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:356
+msgid "Timezone"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:370
+msgid "Time Windows (Schedule)"
+msgstr ""
+
+#. translators: %d: maximum number of schedule entries
+#: stream-timer-for-wordpress.php:375
+#, php-format
+msgid "Plan multiple windows in advance (max. %d). Each window has its own source (platform + channel). The embed is shown as soon as any window is active."
+msgstr ""
+
+#: stream-timer-for-wordpress.php:407
+msgid "Add time window"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:450
+msgid "Maximum number of time windows reached."
+msgstr ""
+
+#: stream-timer-for-wordpress.php:479
+msgid "Display"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:483
+msgid "Height (px)"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:495
+msgid "Element to hide (CSS selector)"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:503
+msgid "Optional. Allowed: classes, IDs, tags, combinators (>+~,), pseudo-classes (:hover etc.). No attribute values, no quotes."
+msgstr ""
+
+#: stream-timer-for-wordpress.php:510
+msgid "Wrapper ID"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:526
+msgid "Current Status"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:530
+msgid "A stream window is currently active."
+msgstr ""
+
+#: stream-timer-for-wordpress.php:531
+#: stream-timer-for-wordpress.php:554
+msgid "(no label)"
+msgstr ""
+
+#. translators: 1: schedule label, 2: source (platform / channel)
+#: stream-timer-for-wordpress.php:535
+#, php-format
+msgid "Active window: %1$s (%2$s)"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:540
+msgid "No stream window is currently active."
+msgstr ""
+
+#. translators: 1: current server time, 2: configured timezone identifier
+#: stream-timer-for-wordpress.php:546
+#, php-format
+msgid "Current server time (%2$s): %1$s"
+msgstr ""
+
+#. translators: 1: schedule label, 2: start datetime, 3: end datetime
+#: stream-timer-for-wordpress.php:557
+#, php-format
+msgid "Next window: %1$s — %2$s to %3$s"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:588
+msgid "Label (optional)"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:593
+msgid "e.g. Wednesday Stream"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:599
+msgid "Platform"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:607
+msgid "Channel / Video ID"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:612
+msgid "Twitch name, YouTube UC… ID, or 11-char video ID"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:615
+msgid "YouTube mode"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:617
+msgid "Live (Channel ID)"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:618
+msgid "Video (Video ID)"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:625
+msgid "Start"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:631
+msgid "End"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:637
+msgid "Daily"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:642
+msgid "repeat"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:650
+msgid "active"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:652
+msgid "Status"
+msgstr ""
+
+#: stream-timer-for-wordpress.php:656
+msgid "Remove"
+msgstr ""
+
+#. translators: 1: heart emoji span, 2: brand link HTML
+#: stream-timer-for-wordpress.php:671
+#, php-format
+msgid "Made with %1$s by %2$s"
+msgstr ""

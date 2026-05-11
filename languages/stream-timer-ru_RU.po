@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stream Timer 3.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/stream-timer\n"
+"POT-Creation-Date: 2026-05-11T15:43:57+00:00\n"
+"PO-Revision-Date: 2026-05-11 18:00+0200\n"
+"Last-Translator: Greenstein Designagentur\n"
+"Language-Team: Русский\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Domain: stream-timer\n"
+
+msgid "Stream Timer"
+msgstr "Stream Timer"
+
+msgid "Schedule-based Twitch or YouTube stream embed. Plan multiple time windows in advance. Configurable in the backend, insert via shortcode [stream_timer]. Performance optimized: assets load only when the shortcode is present and a window is active."
+msgstr "Встраивание потока Twitch или YouTube по расписанию. Планируйте несколько временных окон заранее. Настраивается в админке, вставляется шорткодом [stream_timer]. Оптимизировано по производительности: ресурсы загружаются только при наличии шорткода и активном окне."
+
+msgid "Insufficient permissions."
+msgstr "Недостаточно прав."
+
+msgid "Configuration for the scheduled stream embed. Insert via shortcode:"
+msgstr "Настройка встраивания потока по расписанию. Вставьте через шорткод:"
+
+msgid "Preview (always show):"
+msgstr "Предварительный просмотр (всегда показывать):"
+
+msgid "Platform & Channel"
+msgstr "Платформа и канал"
+
+msgid "Platform"
+msgstr "Платформа"
+
+msgid "Channel / Video ID"
+msgstr "Канал / ID видео"
+
+msgid "Twitch: channel name (4–25 characters). YouTube Live: Channel ID (UC…). YouTube Video: 11-character video ID."
+msgstr "Twitch: имя канала (4–25 символов). YouTube Live: ID канала (UC…). YouTube Video: 11-значный ID видео."
+
+msgid "YouTube mode"
+msgstr "Режим YouTube"
+
+msgid "Live (Channel ID)"
+msgstr "Прямой эфир (ID канала)"
+
+msgid "Video (Video ID)"
+msgstr "Видео (ID видео)"
+
+msgid "Only relevant when Platform = YouTube."
+msgstr "Актуально только при выборе Платформы = YouTube."
+
+msgid "Timezone"
+msgstr "Часовой пояс"
+
+msgid "Time Windows (Schedule)"
+msgstr "Временные окна (расписание)"
+
+msgid "General"
+msgstr "Общие"
+
+msgid "Twitch name, YouTube UC… ID, or 11-char video ID"
+msgstr "Имя Twitch, ID YouTube (UC…) или 11-значный ID видео"
+
+#, php-format
+msgid "Plan multiple windows in advance (max. %d). Each window has its own source (platform + channel). The embed is shown as soon as any window is active."
+msgstr "Запланируйте несколько окон заранее (макс. %d). У каждого окна свой источник (платформа + канал). Встраивание отображается, как только какое-либо окно активно."
+
+#, php-format
+msgid "Active window: %1$s (%2$s)"
+msgstr "Активное окно: %1$s (%2$s)"
+
+#, php-format
+msgid "Plan multiple windows in advance (max. %d). The embed is shown as soon as any window is active."
+msgstr "Запланируйте несколько окон заранее (макс. %d). Встраивание отображается, как только какое-либо окно активно."
+
+msgid "Label (optional)"
+msgstr "Метка (необязательно)"
+
+msgid "Start"
+msgstr "Начало"
+
+msgid "End"
+msgstr "Конец"
+
+msgid "Daily"
+msgstr "Ежедневно"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Add time window"
+msgstr "Добавить окно"
+
+msgid "Maximum number of time windows reached."
+msgstr "Достигнуто максимальное количество окон."
+
+msgid "Display"
+msgstr "Отображение"
+
+msgid "Height (px)"
+msgstr "Высота (px)"
+
+msgid "Element to hide (CSS selector)"
+msgstr "Скрываемый элемент (CSS-селектор)"
+
+msgid "Optional. Allowed: classes, IDs, tags, combinators (>+~,), pseudo-classes (:hover etc.). No attribute values, no quotes."
+msgstr "Необязательно. Разрешено: классы, ID, теги, комбинаторы (>+~,), псевдоклассы (:hover и т. д.). Без значений атрибутов, без кавычек."
+
+msgid "Wrapper ID"
+msgstr "ID контейнера"
+
+msgid "Current Status"
+msgstr "Текущий статус"
+
+msgid "A stream window is currently active."
+msgstr "Окно потока сейчас активно."
+
+msgid "(no label)"
+msgstr "(без метки)"
+
+#, php-format
+msgid "Active window: %s"
+msgstr "Активное окно: %s"
+
+msgid "No stream window is currently active."
+msgstr "Ни одно окно потока сейчас не активно."
+
+#, php-format
+msgid "Current server time (%2$s): %1$s"
+msgstr "Текущее серверное время (%2$s): %1$s"
+
+#, php-format
+msgid "Next window: %1$s — %2$s to %3$s"
+msgstr "Следующее окно: %1$s — %2$s до %3$s"
+
+msgid "e.g. Wednesday Stream"
+msgstr "напр. Стрим по средам"
+
+msgid "repeat"
+msgstr "повторять"
+
+msgid "active"
+msgstr "активно"
+
+msgid "Remove"
+msgstr "Удалить"
+
+#, php-format
+msgid "Made with %1$s by %2$s"
+msgstr "Сделано с %1$s от %2$s"
+
+msgid "Settings saved."
+msgstr "Настройки сохранены."

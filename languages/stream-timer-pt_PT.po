@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stream Timer 3.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/stream-timer\n"
+"POT-Creation-Date: 2026-05-11T15:43:57+00:00\n"
+"PO-Revision-Date: 2026-05-11 18:00+0200\n"
+"Last-Translator: Greenstein Designagentur\n"
+"Language-Team: Português\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: stream-timer\n"
+
+msgid "Stream Timer"
+msgstr "Stream Timer"
+
+msgid "Schedule-based Twitch or YouTube stream embed. Plan multiple time windows in advance. Configurable in the backend, insert via shortcode [stream_timer]. Performance optimized: assets load only when the shortcode is present and a window is active."
+msgstr "Incorporação de stream Twitch ou YouTube com base em agendamento. Planeie várias janelas de tempo com antecedência. Configurável no backend, inserida através do shortcode [stream_timer]. Otimizado para desempenho: os recursos apenas são carregados quando o shortcode está presente e uma janela está ativa."
+
+msgid "Insufficient permissions."
+msgstr "Permissões insuficientes."
+
+msgid "Configuration for the scheduled stream embed. Insert via shortcode:"
+msgstr "Configuração da incorporação de stream agendada. Inserir através do shortcode:"
+
+msgid "Preview (always show):"
+msgstr "Pré-visualização (mostrar sempre):"
+
+msgid "Platform & Channel"
+msgstr "Plataforma e canal"
+
+msgid "Platform"
+msgstr "Plataforma"
+
+msgid "Channel / Video ID"
+msgstr "Canal / ID do vídeo"
+
+msgid "Twitch: channel name (4–25 characters). YouTube Live: Channel ID (UC…). YouTube Video: 11-character video ID."
+msgstr "Twitch: nome do canal (4–25 caracteres). YouTube Live: ID do canal (UC…). YouTube Vídeo: ID do vídeo com 11 caracteres."
+
+msgid "YouTube mode"
+msgstr "Modo YouTube"
+
+msgid "Live (Channel ID)"
+msgstr "Direto (ID do canal)"
+
+msgid "Video (Video ID)"
+msgstr "Vídeo (ID do vídeo)"
+
+msgid "Only relevant when Platform = YouTube."
+msgstr "Apenas relevante quando Plataforma = YouTube."
+
+msgid "Timezone"
+msgstr "Fuso horário"
+
+msgid "Time Windows (Schedule)"
+msgstr "Janelas de tempo (planeamento)"
+
+msgid "General"
+msgstr "Geral"
+
+msgid "Twitch name, YouTube UC… ID, or 11-char video ID"
+msgstr "Nome Twitch, ID UC… do YouTube ou ID do vídeo com 11 caracteres"
+
+#, php-format
+msgid "Plan multiple windows in advance (max. %d). Each window has its own source (platform + channel). The embed is shown as soon as any window is active."
+msgstr "Planeie várias janelas com antecedência (máx. %d). Cada janela tem a sua própria fonte (plataforma + canal). A incorporação é apresentada quando alguma janela estiver ativa."
+
+#, php-format
+msgid "Active window: %1$s (%2$s)"
+msgstr "Janela ativa: %1$s (%2$s)"
+
+#, php-format
+msgid "Plan multiple windows in advance (max. %d). The embed is shown as soon as any window is active."
+msgstr "Planeie várias janelas com antecedência (máx. %d). A incorporação é apresentada quando alguma janela estiver ativa."
+
+msgid "Label (optional)"
+msgstr "Rótulo (opcional)"
+
+msgid "Start"
+msgstr "Início"
+
+msgid "End"
+msgstr "Fim"
+
+msgid "Daily"
+msgstr "Diariamente"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Add time window"
+msgstr "Adicionar janela"
+
+msgid "Maximum number of time windows reached."
+msgstr "Número máximo de janelas atingido."
+
+msgid "Display"
+msgstr "Apresentação"
+
+msgid "Height (px)"
+msgstr "Altura (px)"
+
+msgid "Element to hide (CSS selector)"
+msgstr "Elemento a ocultar (seletor CSS)"
+
+msgid "Optional. Allowed: classes, IDs, tags, combinators (>+~,), pseudo-classes (:hover etc.). No attribute values, no quotes."
+msgstr "Opcional. Permitido: classes, IDs, tags, combinadores (>+~,), pseudo-classes (:hover etc.). Sem valores de atributos, sem aspas."
+
+msgid "Wrapper ID"
+msgstr "ID do invólucro"
+
+msgid "Current Status"
+msgstr "Estado atual"
+
+msgid "A stream window is currently active."
+msgstr "Existe uma janela de stream ativa."
+
+msgid "(no label)"
+msgstr "(sem rótulo)"
+
+#, php-format
+msgid "Active window: %s"
+msgstr "Janela ativa: %s"
+
+msgid "No stream window is currently active."
+msgstr "Nenhuma janela de stream está ativa."
+
+#, php-format
+msgid "Current server time (%2$s): %1$s"
+msgstr "Hora atual do servidor (%2$s): %1$s"
+
+#, php-format
+msgid "Next window: %1$s — %2$s to %3$s"
+msgstr "Próxima janela: %1$s — %2$s a %3$s"
+
+msgid "e.g. Wednesday Stream"
+msgstr "ex.: Stream de quarta-feira"
+
+msgid "repeat"
+msgstr "repetir"
+
+msgid "active"
+msgstr "ativa"
+
+msgid "Remove"
+msgstr "Remover"
+
+#, php-format
+msgid "Made with %1$s by %2$s"
+msgstr "Feito com %1$s por %2$s"
+
+msgid "Settings saved."
+msgstr "Definições guardadas."
